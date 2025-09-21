@@ -90,7 +90,8 @@
             {
 
                 Console.WriteLine("Hata durumunda da hata olmasada çalışırım");
-              
+                Console.WriteLine("Deneme gith");
+
             }
             //finaly her koşulda çalışır bir hata durumunda da çalışır hata almama durumunda da çalışır 
             //mutlaka yapılması gereken hata durumu yada hata olmama durumunda bir işlem var ise finaly çalışmalıdır.
