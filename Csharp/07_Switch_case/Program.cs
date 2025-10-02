@@ -64,19 +64,23 @@
             #region Örnek2 Market
             // \n yapısı enter yani bir alt satıra geç demek
             //goto keyword'ü ile birden fazla case yapısını kullanıyoruz.
-            //Console.WriteLine("Yapmak istediğiniz işlem(1-stok eksilt\n2-ürün ekle\n3-stok azalt)");
+            //Console.WriteLine("Yapmak istediğiniz işlem(1-stok eksilt\n2-ürün ekle\n3-satış yap)");
             //int islem = Convert.ToInt32(Console.ReadLine());
             //switch (islem)
             //{
             //    case 1: Console.WriteLine("Stok eksiltme yapıldı"); break;
             //    case 2: Console.WriteLine("Ürün stoğa eklendi"); break;
             //    case 3: Console.WriteLine("Satış başarılı"); goto case 1;//değeri 1 olan case e yönlendiriyoruz.
-            //    default: Console.WriteLine("Hatalı seçim");break;
+            //    default: Console.WriteLine("Hatalı seçim"); break;
             //}
+
             #endregion
 
             #region Haftanın Günü
-            //kullanıcıya haftanın kaçıncı günü diye soralım kullanıcı 1. günü diye cevap verirse pazartesi olarak bize case yapısı cevap dönsün 1 den 7 ye kadar girilen haftanın günlerini belirleyelim ve eğer 8 0 gibi değerler girilirse 1 ila 7 arasında değer giriniz diye uyarı verelim. 
+            //kullanıcıya haftanın kaçıncı günü diye soralım kullanıcı
+            //1.günü diye cevap verirse pazartesi olarak bize case yapısı cevap dönsün
+            //1 den 7 ye kadar girilen haftanın günlerini belirleyelim ve eğer 8 0 gibi değerler girilirse
+            //1 ila 7 arasında değer giriniz diye uyarı verelim. 
             //Console.WriteLine("Haftanın kaçıncı günü");
             //int gun = Convert.ToInt32(Console.ReadLine());
             //switch (gun)
@@ -88,7 +92,7 @@
             //    case 5: Console.WriteLine("Cuma"); break;
             //    case 6: Console.WriteLine("Cumartesi"); break;
             //    case 7: Console.WriteLine("Pazar"); break;
-            //    default: Console.WriteLine("1-7 arasında değer giriniz ");break;
+            //    default: Console.WriteLine("1-7 arasında değer giriniz "); break;
 
             //}
             #endregion

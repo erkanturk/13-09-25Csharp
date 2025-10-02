@@ -30,6 +30,13 @@
              *}
              *while(koşul);
              */
+            //int i = 11;
+            //do
+            //{
+            //    Console.WriteLine("erkan türk");
+            //    i++;// i değerini her döngüde 1 artırıyoruz.
+
+            //} while (i<=10);
             #region Döngüsüz Örnek
             //Kullanıcıdan 6 sayı alalım ve bu sayıların çift olanlarını ayrı tek olanlarınını ayrı toplayalım
             //int ciftToplam = 0;
@@ -113,7 +120,7 @@
             //        tekToplam+=sayi;
             //    }
             //    i++;//sayıyı 1 artırarak burada koşoşul değerinin sonlanmasını sağlıyoruz.
-            //} while (false);
+            //} while (i<6);
             //Console.WriteLine($"Tek toplam {tekToplam} Çift Toplam {ciftToplam}");
             #endregion
 
@@ -223,7 +230,7 @@
             //    Console.WriteLine(i);
 
             //}
-            //while (i<=20);
+            //while (true);
             //int i = 0;
 
             //do
@@ -239,28 +246,28 @@
             //while (true);
             //Console.WriteLine("Merhaba");
 
-            int sayi;
-            int toplam = 0;
-            do
-            {
-                Console.Write("Bir sayı girin (toplam için 0'a basın): ");
-                sayi = Convert.ToInt32(Console.ReadLine());
-                
-                if (sayi%2==0)
-                {
-                    toplam+=sayi;
-                }
-                else
-                {
-                    continue;
-                }
+            //int sayi;
+            //int toplam = 0;
+            //do
+            //{
+            //    Console.Write("Bir sayı girin (toplam için 0'a basın): ");
+            //    sayi = Convert.ToInt32(Console.ReadLine());
 
-                if (sayi == 0)
-                {
-                    break;
-                }
-            } while (true);
-            Console.WriteLine(toplam);
+            //    if (sayi%2==0)
+            //    {
+            //        toplam+=sayi;
+            //    }
+            //    else
+            //    {
+            //        continue;
+            //    }
+
+            //    if (sayi == 0)
+            //    {
+            //        break;
+            //    }
+            //} while (true);
+            //Console.WriteLine(toplam);
             #endregion
         }
     }
