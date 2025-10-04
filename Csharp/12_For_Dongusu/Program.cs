@@ -108,19 +108,20 @@
             //for (int i = 0; i < metin.Length; i++)
             //{
             //    Console.WriteLine(Convert.ToChar(metin[i]));
-            //   // Console.WriteLine(i);
+            //    Console.WriteLine(i);
+
             //}
 
             #endregion
 
             #region  For örnek 5
             //sistem tarafından oluşturulan değerin uzunluğu kadar 1 ila 101 arasında sayı oluşturan for yapısı
-            Random random = new Random();
+            //Random random = new Random();
 
-            for (int i = 0; i <= random.Next(1, 101); i++)
-            {
-                Console.WriteLine(i);
-            }
+            //for (int i = 0; i <= random.Next(1, 101); i++)
+            //{
+            //    Console.WriteLine(i);
+            //}
             //Random sayıların çiftlerini ve teklerini ayrı ayrı toplayıp ekrana yazdırın
             #endregion
         }
