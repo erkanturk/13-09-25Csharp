@@ -163,37 +163,173 @@
             #region 
             //Kullanıcıdan en az 10 elemanlı int bir dizi oluşturmasını isteyelim
             //bu dizinin içindeki değerleri tek ve çift olarak ayrı ayrı toplayıp ekrana yazdıralım 
-            Console.WriteLine("Lütfen en az 10 elemanlı dizi oluşturun");
-            int sayi = Convert.ToInt32(Console.ReadLine());
-            if (sayi<10)
-            {
-                sayi = 10;
-            }
-            int[] sayilar = new int[sayi];
-            int tekToplam = 0;
-            int ciftToplam = 0;
+            //Console.WriteLine("Lütfen en az 10 elemanlı dizi oluşturun");
+            //int sayi = Convert.ToInt32(Console.ReadLine());
+            //if (sayi<10)
+            //{
+            //    sayi = 10;
+            //}
+            //int[] sayilar = new int[sayi];
+            //int tekToplam = 0;
+            //int ciftToplam = 0;
 
-            for (int i = 0; i<sayilar.Length; i++)
-            {
-                Console.WriteLine($"{i+1}.Sayı");
-                int deger = Convert.ToInt32(Console.ReadLine());
-                sayilar[i]=deger;
+            //for (int i = 0; i<sayilar.Length; i++)
+            //{
+            //    Console.WriteLine($"{i+1}.Sayı");
+            //    int deger = Convert.ToInt32(Console.ReadLine());
+            //    sayilar[i]=deger;
 
-            }
-            foreach (int deger in sayilar)
-            {
-                if (deger%2==0)
-                {
-                    ciftToplam+=deger;
-                }
-                else
-                {
-                    tekToplam+=deger;
-                }
+            //}
+            //foreach (int deger in sayilar)
+            //{
+            //    if (deger%2==0)
+            //    {
+            //        ciftToplam+=deger;
+            //    }
+            //    else
+            //    {
+            //        tekToplam+=deger;
+            //    }
 
-            }
-            Console.WriteLine("Tek sayılar toplamı: "+tekToplam);
-            Console.WriteLine("Çift sayılar toplamı: "+ciftToplam);
+            //}
+            //Console.WriteLine("Tek sayılar toplamı: "+tekToplam);
+            //Console.WriteLine("Çift sayılar toplamı: "+ciftToplam);
+            #endregion
+
+            #region ArrayMethods
+            //string[] adlar = { "Ali", "Veli", "Eren", "Mehmet", "Kerem", "Veli", "Mahmut", "Veli" };
+
+            //foreach (string ad in adlar)
+            //{
+            //    Console.WriteLine(ad);
+            //}
+            /*Clear*/
+            //Array.Clear(adlar);//Tüm dizinin elemanlarını siler
+            //Array.Clear(adlar, 1, 3);//Sileceği index değeri ve uzunluk belirtiyoruz.
+            //foreach (string ad in adlar)
+            //{
+            //    Console.WriteLine(ad);
+            //}
+            /*Copy*/
+            //string[] adlar2 = new string[adlar.Length];
+            ////Array.Copy(adlar, adlar2, 3);
+            ////Array.Copy(adlar, adlar2, adlar.Length);
+            //Array.Copy(adlar,1, adlar2, 0,5);//ilk değer kopyalanacak yapıdaki index
+            ////bu indexi al ve benim 0.indeximden başlayarak 5 elemanını kopyala
+
+
+            //foreach (string ad in adlar2)
+            //{
+            //    Console.WriteLine(ad);
+            //}
+            /*IndexOf*/
+
+            //int index = Array.IndexOf(adlar, "Veli");//indexof sadece ilk bulduğu değeri getirir
+            //int index2 = Array.IndexOf(adlar, "Veli",2);
+            //Console.WriteLine(index);//ilk bulduğu index değeri
+            //Console.WriteLine(index2);//başlangıç index değerini verdiğimiz için sonrasında bulduğu index değeri
+            /*LastIndexOf*/
+            //int index = Array.LastIndexOf(adlar, "Veli");//Sondan arayarak ilk bulduğu değeri getirir
+            //int index2 = Array.LastIndexOf(adlar,"Veli", index-1);//ilk bulduğun değerin bir düşüğünden aramaya başla
+            //Console.WriteLine(index);
+            //Console.WriteLine(index2);
+            /*Sort ve Reverse*/
+            //string[] iller = { "Zonguldak", "Amasya", "Bursa", "Adana", "Kars", "Giresun", "Ordu", "Van" };
+            //Array.Sort(iller);//A>Z ye sıralama yapar.
+            //Array.Reverse(iller);//Tersine çevirme işlemi yapar 
+            //foreach (string il in iller)
+            //{
+            //    Console.WriteLine(il);
+            //}
+            //Console.WriteLine("***************");
+            //int[] sayilar = { 1000, 99, 5456, 327, 1, 68, 73, 877 };
+            //Array.Sort(sayilar);//Küçükten büyüğe
+            //foreach (int sayi in sayilar)
+            //{
+            //    Console.WriteLine(sayi);
+            //}
+            /*ReSize*/
+            //int[] sayilar = new int[5];
+            //sayilar[0]= 1;
+            //sayilar[1]= 2;
+            //sayilar[2]= 3;
+            //sayilar[3]= 4;
+            //sayilar[4]= 5;
+            //string[] adlar = { "Ali", "Veli", "Ahmet", "Berat", "Enes" };
+            //Console.WriteLine("Hangi Değeri  görmek istiyorsun");
+            //string sayi = Console.ReadLine();
+            //if (int.TryParse(sayi, out int s))
+            //{
+            //    Console.WriteLine(adlar[s]);
+            //}
+            //else
+            //{
+            //    int index = Array.IndexOf(adlar, sayi);
+            //    Console.WriteLine(adlar[index]);
+            //}
+
+
+            /*Ref Daha önce tanımlanmış bir değeri revize etmek güncellemek için kullandığımız bir keyword'dür
+             * Out:Daha önce tanımlanmamış null olan bir değere veri ataması yapmak için kullandığımız bir keyword'dür
+             
+             */
+            // Array.Resize(ref sayilar, 8);
+            //Array.Resize(ref sayilar,sayilar.Length+1);//Sayılar dizisinin boyutunu uzunluğunun 1 fazlası olarak ayarla
+
+            // sayilar[5]= 6;
+            // //Array.Resize(ref sayilar, 3);//sayılar dizisinin boyutunu düşür
+            // Array.Resize(ref sayilar, sayilar.Length-1);
+            // foreach (int sayi in sayilar)
+            // {
+            //     Console.WriteLine(sayi);
+            // }
+            //Console.WriteLine("Lütfen bir sayı giriniz");
+            //string sayi = Console.ReadLine();
+
+
+            ////if (int.TryParse(sayi, out int s))
+            ////{
+            ////    Console.WriteLine(s+10);
+            ////}
+            ////else
+            ////{
+            ////    Console.WriteLine(sayi+10);
+            ////}
+            //int s;
+            //if (int.TryParse(sayi, out s))
+            //{
+            //    s=100;
+            //    Console.WriteLine(s);
+            //}
+            //else
+            //{
+            //    Console.WriteLine(sayi);
+            //}
+
+            //Console.WriteLine("Kategori giriniz");
+            //string kategori = Console.ReadLine();
+            //if (int.TryParse(kategori, out int s))
+            //{
+            //    switch (s)
+            //    {
+            //        case 1: Console.WriteLine($"Aksiyon reyonu A Reyonundadır"); break;
+            //        case 2: Console.WriteLine($"Macera reyonu B Reyonundadır"); break;
+            //        case 3: Console.WriteLine($"Bilim Kurgu reyonu C Reyonundadır"); break;
+            //        default: Console.WriteLine("Girdiğiniz kategori mevcut değildir"); break;
+            //    }
+            //}
+            //else
+            //{
+            //    switch (kategori)
+            //    {
+            //        case "Aksiyon": Console.WriteLine($"{kategori} reyonu A Reyonundadır"); break;
+            //        case "Macera": Console.WriteLine($"{kategori} reyonu B Reyonundadır"); break;
+            //        case "Bilim kurgu": Console.WriteLine($"{kategori} reyonu C Reyonundadır"); break;
+            //        default: Console.WriteLine("Girdiğiniz kategori mevcut değildir"); break;
+            //    }
+            //}
+          
+          
             #endregion
 
             //https://roadmap.sh/

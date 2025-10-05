@@ -35,6 +35,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14_Arrays", "14_Arrays\14_A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15_OtomatProjesi", "15_OtomatProjesi\15_OtomatProjesi.csproj", "{A3AF7155-47FF-4FB9-93E0-B2113E49B877}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16_Math_Methods", "16_Math_Methods\16_Math_Methods.csproj", "{8E8F75DF-4EEB-4F0B-B21C-68F0E7F51B0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17_String_Methods", "17_String_Methods\17_String_Methods.csproj", "{3069B88E-55F1-4DAE-A628-87096E34DE68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +109,14 @@ Global
 		{A3AF7155-47FF-4FB9-93E0-B2113E49B877}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3AF7155-47FF-4FB9-93E0-B2113E49B877}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3AF7155-47FF-4FB9-93E0-B2113E49B877}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E8F75DF-4EEB-4F0B-B21C-68F0E7F51B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E8F75DF-4EEB-4F0B-B21C-68F0E7F51B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E8F75DF-4EEB-4F0B-B21C-68F0E7F51B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E8F75DF-4EEB-4F0B-B21C-68F0E7F51B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3069B88E-55F1-4DAE-A628-87096E34DE68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3069B88E-55F1-4DAE-A628-87096E34DE68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3069B88E-55F1-4DAE-A628-87096E34DE68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3069B88E-55F1-4DAE-A628-87096E34DE68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
