@@ -31,15 +31,18 @@
             //    sayilar[i]=sayi;
             //}
             //ParamsliMethod2(sayilar);
-            int[] dizi = { 10, 20, 30, 40, 50 };
-            int[] dizi2 = { 10, 20, 30, 40, 50 };
-            DiziliMethod4(dizi);//Dizi alan method;
-                                // DiziliMethod4(10, 20, 30, 40, 50, 60);//Bu yapıda her biri birer parametre olarak değerlendirilir.
-            ParamsliMethod5(dizi,dizi2);
-            ParamsliMethod3(dizi);
-            ParamsliMethod3(100, 200, 300, 400, 500, 600);//Bu yapıda her biri birer parametre olarak değerlendirilir.
+            //int[] dizi = { 10, 20, 30, 40, 50 };
+            //int[] dizi2 = { 10, 20, 30, 40, 50 };
+            //DiziliMethod4(dizi);//Dizi alan method;
+            //                    // DiziliMethod4(10, 20, 30, 40, 50, 60);//Bu yapıda her biri birer parametre olarak değerlendirilir.
+            //ParamsliMethod5(dizi, dizi2);
+            //ParamsliMethod3(dizi);
+            //ParamsliMethod3(100, 200, 300, 400, 500, 600);//Bu yapıda her biri birer parametre olarak değerlendirilir.
+            // Yazdir(10, 20, 30, 40, 50, 60);
+            ParamsliMethod3(100,2000,3333,4444,5555,99999,7777,5555,6666,7777,6666,8888);
 
         }
+
         static void Yazdir(int sayi, int sayi2)
         {
             Console.WriteLine(sayi+sayi2);
@@ -94,6 +97,14 @@
         /// <param name="dizi"></param>
         static void ParamsliMethod3(params int[] dizi)
         {
+            for (int i = 0; i<3; i++)
+            {
+                dizi[i]*=2;
+            }
+            for (int i = 3; i<6; i++)
+            {
+                dizi[i]*=3;
+            }
             foreach (var item in dizi)
             {
                 Console.WriteLine(item);
