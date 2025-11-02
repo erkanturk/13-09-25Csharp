@@ -12,8 +12,8 @@
              * Bir methodda sadece bir tane params keywordü kullanılabilir
                 
              */
-            // Yazdir(10, 20,50);//Hata verir method 2 parametrelidir.
-            //YazdirParams(25.5,50,45,35,75,25,4,96,547,68,647,697,147,697,147);
+            //Yazdir(10, 20, 50);//Hata verir method 2 parametrelidir.
+            YazdirParams(20,50,60,70,50,60,80,90,70,50,60,70,80,90);
             //Sınırsız sayıda parametre göndermemizi sağlar
             //YazdirParams(30.5);//bu şekilde zorunlu olan double parametreyi vermemiz yeterlidir.
             //YazdirParams();//Bu şekilde de çağırabiliriz.
@@ -63,7 +63,7 @@
                 Console.WriteLine(item);
             }
         }
-        
+
         static void ParamsliMethod(params object[] objeler)
         {
             foreach (var item in objeler)

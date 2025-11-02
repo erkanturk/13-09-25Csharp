@@ -15,18 +15,22 @@ namespace _29_ArrayList
 
              */
             #region Boş ArrayList Tanımlama
-            //ArrayList arrayList = new ArrayList();//boş arraylist tanımlandı
-            //arrayList.Add(100);//int veri tipi eklendi
-            //arrayList.Add("Merhaba");//string veri tipi eklendi
-            //arrayList.Add(45.5);//double veri tipi eklendi
-            //arrayList.Add('A');//char veri tipi eklendi
-            //arrayList.Add(true);//bool veri tipi eklendi
-            //arrayList.Add(DateTime.Now);//DateTime veri tipi eklendi
+            ArrayList arrayList = new ArrayList();//boş arraylist tanımlandı
+            arrayList.Add(100);//int veri tipi eklendi
+            arrayList.Add("Merhaba");//string veri tipi eklendi
+            arrayList.Add(45.5);//double veri tipi eklendi
+            arrayList.Add('A');//char veri tipi eklendi
+            arrayList.Add(true);//bool veri tipi eklendi
+            arrayList.Add(DateTime.Now);//DateTime veri tipi eklendi
+            object obj = 1234;//Boxing işlemi
+            int sayi=obj is int ? (int)obj : 0;//Unboxing işlemi
+            int sayi2 = (int)obj;//Unboxing işlemi
 
-            //foreach (var item in arrayList)
-            //{
-            //    Console.WriteLine(item);
-            //}
+
+            foreach (var item in arrayList)
+            {
+                Console.WriteLine(item);
+            }
             #endregion
             #region Dolu ArrayList Tanımlama
             //ArrayList arrayList = new ArrayList() { 100, "Merhaba", 45.5, 'A', true, DateTime.Now };
@@ -154,8 +158,8 @@ namespace _29_ArrayList
             //    Console.WriteLine("Merhaba");//if içi
             //Console.WriteLine("İf dışı");
 
-            ArrayList arrayList = new ArrayList() { "Ahmet", "Erkan", 10, 'A', true };
-            Console.WriteLine(arrayList.Contains("Tahsin")?"Var":"Yok");//? Eğer (if) :değilse(else) ternary operators
+            //ArrayList arrayList = new ArrayList() { "Ahmet", "Erkan", 10, 'A', true };
+            //Console.WriteLine(arrayList.Contains("Tahsin")?"Var":"Yok");//? Eğer (if) :değilse(else) ternary operators
 
 
         }

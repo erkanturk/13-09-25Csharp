@@ -73,20 +73,25 @@
             string ad="";
             string soyad="";
             int yas=0;
-
-            //if (s>s2)
-            //{
-            //    CokluForm(s-1, s2);
-            //}
-            for (int i = s2; i<s; i++)
+            Console.WriteLine("Ad");
+            ad = Console.ReadLine();
+            Console.WriteLine("Soyad");
+            soyad = Console.ReadLine();
+            Console.WriteLine("Yaş");
+            yas = Convert.ToInt32(Console.ReadLine());
+            if (s>s2)
             {
-                Console.WriteLine("Ad");
-                 ad = Console.ReadLine();
-                Console.WriteLine("Soyad");
-                 soyad = Console.ReadLine();
-                Console.WriteLine("Yaş");
-                yas = Convert.ToInt32(Console.ReadLine());
+                CokluForm(s-1, s2);
             }
+            //for (int i = s2; i<s; i++)
+            //{
+            //    Console.WriteLine("Ad");
+            //     ad = Console.ReadLine();
+            //    Console.WriteLine("Soyad");
+            //     soyad = Console.ReadLine();
+            //    Console.WriteLine("Yaş");
+            //    yas = Convert.ToInt32(Console.ReadLine());
+            //}
             Console.WriteLine(ad+" "+soyad+" "+yas);
 
         }
