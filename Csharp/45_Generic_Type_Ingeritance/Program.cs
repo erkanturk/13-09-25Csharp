@@ -6,7 +6,7 @@
         {
             ChildClass childClass = new ChildClass();
             childClass.Value="merhaba";
-            childClass.Value=10;//tanımlanırken string belirtildi
+            //childClass.Value=10;//tanımlanırken string belirtildi
             childClass.Deger='A';
 
             ChildClass2<char> childClass2 = new ChildClass2<char>();
