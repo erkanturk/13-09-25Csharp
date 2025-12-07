@@ -45,6 +45,8 @@ namespace ManavOtomasyon
             cmbHalKategori = new ComboBox();
             label1 = new Label();
             tabPage2 = new TabPage();
+            label7 = new Label();
+            lst_Satis = new ListBox();
             lstMusteri = new ListBox();
             label6 = new Label();
             btn_satisyap = new Button();
@@ -54,8 +56,6 @@ namespace ManavOtomasyon
             cmbManavKategori = new ComboBox();
             label4 = new Label();
             btn_cikis = new Button();
-            lst_Satis = new ListBox();
-            label7 = new Label();
             Hal.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -100,7 +100,7 @@ namespace ManavOtomasyon
             btn_HalSil.TabIndex = 10;
             btn_HalSil.Text = "Sil";
             btn_HalSil.UseVisualStyleBackColor = true;
-            
+            btn_HalSil.Click += btn_HalSil_Click;
             // 
             // btn_HalGuncelle
             // 
@@ -110,7 +110,7 @@ namespace ManavOtomasyon
             btn_HalGuncelle.TabIndex = 9;
             btn_HalGuncelle.Text = "Güncelle";
             btn_HalGuncelle.UseVisualStyleBackColor = true;
-           
+            btn_HalGuncelle.Click += btn_HalGuncelle_Click;
             // 
             // btn_manavAl
             // 
@@ -120,7 +120,7 @@ namespace ManavOtomasyon
             btn_manavAl.TabIndex = 8;
             btn_manavAl.Text = "Manav Al";
             btn_manavAl.UseVisualStyleBackColor = true;
-           
+            btn_manavAl.Click += btn_manavAl_Click;
             // 
             // btn_halEkle
             // 
@@ -130,7 +130,7 @@ namespace ManavOtomasyon
             btn_halEkle.TabIndex = 7;
             btn_halEkle.Text = "Hal Ekle";
             btn_halEkle.UseVisualStyleBackColor = true;
-           
+            btn_halEkle.Click += btn_halEkle_Click;
             // 
             // label3
             // 
@@ -212,6 +212,24 @@ namespace ManavOtomasyon
             tabPage2.Text = "Manav";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(313, 381);
+            label7.Name = "label7";
+            label7.Size = new Size(84, 15);
+            label7.TabIndex = 9;
+            label7.Text = "Satılan Ürünler";
+            // 
+            // lst_Satis
+            // 
+            lst_Satis.FormattingEnabled = true;
+            lst_Satis.ItemHeight = 15;
+            lst_Satis.Location = new Point(252, 399);
+            lst_Satis.Name = "lst_Satis";
+            lst_Satis.Size = new Size(505, 124);
+            lst_Satis.TabIndex = 8;
+            // 
             // lstMusteri
             // 
             lstMusteri.FormattingEnabled = true;
@@ -238,7 +256,7 @@ namespace ManavOtomasyon
             btn_satisyap.TabIndex = 5;
             btn_satisyap.Text = "Satış Yap";
             btn_satisyap.UseVisualStyleBackColor = true;
-            
+            btn_satisyap.Click += btn_satisyap_Click;
             // 
             // txt_manavKilo
             // 
@@ -292,25 +310,7 @@ namespace ManavOtomasyon
             btn_cikis.TabIndex = 1;
             btn_cikis.Text = "Çıkış";
             btn_cikis.UseVisualStyleBackColor = true;
-           
-            // 
-            // lst_Satis
-            // 
-            lst_Satis.FormattingEnabled = true;
-            lst_Satis.ItemHeight = 15;
-            lst_Satis.Location = new Point(252, 399);
-            lst_Satis.Name = "lst_Satis";
-            lst_Satis.Size = new Size(505, 124);
-            lst_Satis.TabIndex = 8;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(313, 381);
-            label7.Name = "label7";
-            label7.Size = new Size(84, 15);
-            label7.TabIndex = 9;
-            label7.Text = "Satılan Ürünler";
+            btn_cikis.Click += btn_cikis_Click;
             // 
             // Form1
             // 

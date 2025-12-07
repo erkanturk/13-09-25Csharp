@@ -25,7 +25,7 @@ namespace ManavOtomasyon
         }
         private void GuncelleHalUrunler()
         {
-            lstHalUrunler.Items.Clear();
+            LstHalUrunler.Items.Clear();
             using (var context = new DataContext())
             {
                 string kategori = cmbHalKategori.SelectedItem.ToString();
@@ -39,10 +39,10 @@ namespace ManavOtomasyon
         }
         private void GuncelleManavUrunler()
         {
-            LstHalUrunler.Items.Clear();
+            lstManavListe.Items.Clear();
             using (var context = new DataContext())
             {
-                string kategori = cmbManavKategori.SelectedItem.ToString();
+                string kategori = cmbManavKategori.SelectedItem?.ToString();
                 var urunler = context.Manavlar.Where(u => u.Kategori==kategori).ToList();
                 foreach (var urun in urunler)
                 {
@@ -53,6 +53,7 @@ namespace ManavOtomasyon
         }
         private void Satis()
         {
+            lst_Satis.Items.Clear();
             using (var context = new DataContext())
             {
                 var urunler = context.Satislar.Where(s => s.Id==s.Id).ToList();
@@ -63,7 +64,7 @@ namespace ManavOtomasyon
             }
         }
 
-        private void btn_HalEkle_Click(object sender, EventArgs e)
+        private void btn_halEkle_Click(object sender, EventArgs e)
         {
             using (var context = new DataContext())
             {
@@ -100,12 +101,12 @@ namespace ManavOtomasyon
             GuncelleHalUrunler();
         }
 
-        private void btn_Cikis_Click(object sender, EventArgs e)
+        private void btn_cikis_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btn_ManavAl_Click(object sender, EventArgs e)
+        private void btn_manavAl_Click(object sender, EventArgs e)
         {
             using (var context = new DataContext())
             {
@@ -163,6 +164,114 @@ namespace ManavOtomasyon
         private void cmbManavKategori_SelectedIndexChanged(object sender, EventArgs e)
         {
             GuncelleManavUrunler();
+        }
+
+        private void btn_HalGuncelle_Click(object sender, EventArgs e)
+        {
+            using (var context = new DataContext())
+            {
+                string secilenUrunFull = LstHalUrunler.SelectedItem?.ToString();
+                if (secilenUrunFull==null)
+                {
+                    MessageBox.Show("Lütfen bir ürün seçiniz.");
+                    return;
+                }
+                string[] urunParts = secilenUrunFull.Split('-');
+                string secilenUrun = urunParts[0].Trim();
+                var urun = context.Urunler.FirstOrDefault(u => u.Ad==secilenUrun);
+                if (urun==null)
+                {
+                    MessageBox.Show("Ürün bulunamadý");
+                    return;
+                }
+                if (!int.TryParse(txt_Halkilo.Text, out int yeniKilo)||yeniKilo<0)
+                {
+                    MessageBox.Show("Lütfen geçerli bir kilo giriniz");
+                    return;
+                }
+                urun.Stok=yeniKilo;
+                if (!string.IsNullOrEmpty(txt_urun.Text))
+                {
+                    urun.Ad=txt_urun.Text.ToString();
+                }
+                context.SaveChanges();
+                MessageBox.Show("Stok baþarý ile güncellendi");
+                GuncelleHalUrunler();
+                txt_Halkilo.Clear();
+                txt_urun.Clear();
+            }
+        }
+
+        private void btn_HalSil_Click(object sender, EventArgs e)
+        {
+            using (var context = new DataContext())
+            {
+                string secilenUrunFull = LstHalUrunler.SelectedItem?.ToString();
+                if (secilenUrunFull==null)
+                {
+                    MessageBox.Show("Lütfen bir ürün seçiniz");
+                    return;
+                }
+                string[] urunParts = secilenUrunFull.Split('-');
+                string secilenUrun = urunParts[0].Trim();
+                var urun = context.Urunler.FirstOrDefault(u => u.Ad==secilenUrun);
+                if (urun==null)
+                {
+                    MessageBox.Show("Ürün bulunamadý");
+                    return;
+                }
+                DialogResult result = MessageBox.Show($"'{secilenUrun}' Ürünü silmek ister misiniz ?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result==DialogResult.Yes)
+                {
+                    context.Urunler.Remove(urun);
+                    context.SaveChanges();
+                    MessageBox.Show("Ürün baþarý ile silindi");
+                    GuncelleHalUrunler();
+                }
+
+            }
+        }
+
+        private void btn_satisyap_Click(object sender, EventArgs e)
+        {
+            using (var context = new DataContext())
+            {
+                string secilenUrunFull = lstManavListe.SelectedItem?.ToString();
+                if (secilenUrunFull==null)
+                {
+                    MessageBox.Show("Bir ürün seçiniz");
+                    return;
+                }
+                string[] urunParts = secilenUrunFull.Split('-');
+                string secilenUrun = urunParts[0].Trim();
+                if (!int.TryParse(txt_manavKilo.Text, out int kilo)|| kilo<=0)
+                {
+                    MessageBox.Show("Lütfen geçerli bir kilo giriniz");
+                    return;
+                }
+                var manavUrun = context.Manavlar.FirstOrDefault(u => u.Ad==secilenUrun);
+                if (manavUrun==null||manavUrun.Stok<kilo)
+                {
+                    MessageBox.Show("Yeterli stok yok");
+                }
+                manavUrun.Stok-=kilo;
+                context.Satislar.Add(new Satis()
+                {
+                    UrunAdi=secilenUrun,
+                    Miktar=kilo,
+                    SatisTarih=DateTime.Now
+                });
+                if (manavUrun.Stok==0)
+                {
+                    context.Manavlar.Remove(manavUrun);
+                }
+                lstMusteri.Items.Add($"{secilenUrun}-{kilo} kg - {DateTime.Now.ToString("HH:mm")}");
+                context.SaveChanges();
+                MessageBox.Show("Satýþ baþarýlý");
+                txt_manavKilo.Clear();
+                GuncelleManavUrunler();
+                Satis();
+            }
         }
     }
 }
