@@ -84,15 +84,48 @@ namespace PersonelUygulamasi.BLL
             }
             return personellerim;
         }
-        public List<Personel> PersonelListele1()
+        public List<Personel> PersonelListele2()
         {
             List<Personel> personellerim = new List<Personel>();
+            try
+            {
+                _reader=_dal.PersonelListele2();
+                while (_reader.Read())
+                {
+                    personellerim.Add(new Personel()
+                    {
+                        Id=_reader.GetInt32(0),
+                        Isim=_reader.IsDBNull(1) ? string.Empty : _reader.GetString(1),
+                        Soyisim=_reader.IsDBNull(2) ? string.Empty : _reader.GetString(2),
+                        Email=_reader.IsDBNull(3) ? string.Empty : _reader.GetString(3),
+                        Telefon=_reader.IsDBNull(4) ? string.Empty : _reader.GetString(4),
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Hata: "+ex.Message);
+                throw;
+            }
+            finally
+            {
+                if (_reader!=null&&!_reader.IsClosed)
+                {
+                    _reader.Close();
+                }
+                _dal.BaglantiAyarla();
+            }
+            return personellerim;
+        }
+        public List<Personel1> PersonelListele1()
+        {
+            List<Personel1> personellerim = new List<Personel1>();
             try
             {
                 _reader=_dal.PersonelListele();
                 while (_reader.Read())
                 {
-                    personellerim.Add(new Personel()
+                    personellerim.Add(new Personel1()
                     {
                         Id=_reader.GetInt32(0),
                         Isim=_reader.IsDBNull(1) ? string.Empty : _reader.GetString(1),

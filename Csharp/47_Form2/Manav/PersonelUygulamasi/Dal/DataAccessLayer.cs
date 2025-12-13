@@ -139,6 +139,20 @@ namespace PersonelUygulamasi.Dal
                 throw;
             }
         }
+        public SqlDataReader PersonelListele2()
+        {
+            try
+            {
+                _cmd=new SqlCommand($"Select * from Personel where Id is null", _connect);
+                BaglantiAyarla();
+                return _cmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Hata: "+ex.Message);
+                throw;
+            }
+        }
 
     }
 }
