@@ -13,6 +13,7 @@ namespace PersonelUygulamasi.Entities
         public string Soyisim { get; set; }
         public string Email { get; set; }
         public string Telefon { get; set; }
+        public string Adres { get; set; }
         public override string ToString()
         {
             return $"{Isim} {Soyisim}";
@@ -23,7 +24,7 @@ namespace PersonelUygulamasi.Entities
     {
         public override string ToString()
         {
-            return $"{Isim} {Soyisim} {Email} {Telefon}";
+            return $"{Isim} {Soyisim} {Email} {Telefon} {Adres}";
         }
     }
 }

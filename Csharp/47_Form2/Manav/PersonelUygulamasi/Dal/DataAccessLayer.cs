@@ -57,7 +57,7 @@ namespace PersonelUygulamasi.Dal
         }
         public int PersonelKayit(Personel p)
         {
-            _cmd=new SqlCommand($"Insert into Personel (Isim,Soyisim,Email,Telefon) values ('{p.Isim}','{p.Soyisim}','{p.Email}','{p.Telefon}')", _connect);
+            _cmd=new SqlCommand($"Insert into Personel (Isim,Soyisim,Email,Telefon,Adres) values ('{p.Isim}','{p.Soyisim}','{p.Email}','{p.Telefon}','{p.Adres}')", _connect);
             BaglantiAyarla();
             sonuc=_cmd.ExecuteNonQuery();//insert update delete C.U.D 
             BaglantiAyarla();

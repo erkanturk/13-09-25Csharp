@@ -16,7 +16,15 @@ namespace PersonelUygulamasi
 
         private void btn_kayit_Click(object sender, EventArgs e)
         {
-            sonuc =BLL.PersonelKayit(txt_YeniAd.Text, txt_YeniSoyad.Text, txt_YeniEmail.Text, txt_YeniTel.Text);
+            Personel personel = new Personel()
+            {
+                Isim=txt_YeniAd.Text,
+                Soyisim=txt_YeniSoyad.Text,
+                Adres="Kadýkoy",
+                Telefon=txt_YeniTel.Text,
+                Email=txt_YeniEmail.Text
+            };
+            sonuc =BLL.PersonelKayit(personel);
             if (sonuc==-100)
             {
                 MessageBox.Show("Boþ Alanlarý Doldurunuz");

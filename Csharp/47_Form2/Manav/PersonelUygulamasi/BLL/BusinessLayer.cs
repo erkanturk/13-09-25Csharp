@@ -30,23 +30,24 @@ namespace PersonelUygulamasi.BLL
             };
             return _dal.SistemGirisKontrol(sistemKullanici);
         }
-        public int PersonelKayit(string isim, string soyisim, string email, string telefon)
+        public int PersonelKayit(Personel personel)
         {
-            if (string.IsNullOrEmpty(isim)||string.IsNullOrEmpty(soyisim)||string.IsNullOrEmpty(email)||string.IsNullOrEmpty(telefon))
+            if (string.IsNullOrEmpty(personel.Isim)||string.IsNullOrEmpty(personel.Soyisim)||string.IsNullOrEmpty(personel.Email)||string.IsNullOrEmpty(personel.Telefon))
             {
                 return -100;
             }
-            bool uniqueEmail = _dal.UniqueEmailPhone(email, telefon);
+            bool uniqueEmail = _dal.UniqueEmailPhone(personel.Email, personel.Telefon);
             if (uniqueEmail)
             {
                 return -101;
             }
             Personel p = new Personel()
             {
-                Soyisim =soyisim,
-                Isim=isim,
-                Email=email,
-                Telefon=telefon
+                Soyisim =personel.Soyisim,
+                Isim=personel.Isim,
+                Email=personel.Email,
+                Telefon=personel.Telefon,
+                Adres=personel.Adres
             };
             return _dal.PersonelKayit(p);
 
@@ -66,6 +67,7 @@ namespace PersonelUygulamasi.BLL
                         Soyisim=_reader.IsDBNull(2) ? string.Empty : _reader.GetString(2),
                         Email=_reader.IsDBNull(3) ? string.Empty : _reader.GetString(3),
                         Telefon=_reader.IsDBNull(4) ? string.Empty : _reader.GetString(4),
+                        Adres=_reader.IsDBNull(5) ? string.Empty : _reader.GetString(5),
                     });
                 }
             }
@@ -132,6 +134,7 @@ namespace PersonelUygulamasi.BLL
                         Soyisim=_reader.IsDBNull(2) ? string.Empty : _reader.GetString(2),
                         Email=_reader.IsDBNull(3) ? string.Empty : _reader.GetString(3),
                         Telefon=_reader.IsDBNull(4) ? string.Empty : _reader.GetString(4),
+                        Adres=_reader.IsDBNull(5) ? string.Empty : _reader.GetString(5),
                     });
                 }
             }
