@@ -83,6 +83,7 @@
             btn_GirisYap.TabIndex = 3;
             btn_GirisYap.Text = "Giriş Yap";
             btn_GirisYap.UseVisualStyleBackColor = true;
+            btn_GirisYap.Click += btn_GirisYap_Click;
             // 
             // txt_GirisSifre
             // 

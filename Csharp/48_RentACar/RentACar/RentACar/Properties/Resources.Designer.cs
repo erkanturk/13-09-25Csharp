@@ -63,6 +63,16 @@ namespace RentACar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bertan_rent_acar {
+            get {
+                object obj = ResourceManager.GetObject("bertan-rent-acar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hazir_rent_a_car {
             get {
                 object obj = ResourceManager.GetObject("hazir-rent-a-car", resourceCulture);

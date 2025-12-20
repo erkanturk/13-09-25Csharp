@@ -44,7 +44,7 @@ namespace RentACar
                     MessageBox.Show("Lütfen boş alanları doldurunuz");
                     return;
                 }
-               
+
 
                 Musteri musteri = new Musteri()
                 {
@@ -84,6 +84,33 @@ namespace RentACar
                 txt_kAdSoyad.Clear();
                 txt_kEmail.Clear();
 
+            }
+        }
+
+        private void btn_GirisYap_Click(object sender, EventArgs e)
+        {
+            string telefon = txt_GirisTel.Text;
+            string sifre = txt_GirisSifre.Text;
+            var musteri = _context.Musteriler.FirstOrDefault(i => i.Telefon==telefon&&i.Password==sifre);
+            if (musteri==null)
+            {
+                MessageBox.Show("Kullanıcı bulunamadı");
+                txt_GirisSifre.Clear();
+                txt_GirisTel.Clear();
+                return;
+            }
+            else if (sifre==musteri.Password&&telefon==musteri.Telefon)
+            {
+                MessageBox.Show("Giriş başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                ArabaForm arabaForm = new ArabaForm(musteri);
+                arabaForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Giriş bilgileri hatalı");
+                txt_GirisSifre.Clear();
+                txt_GirisTel.Clear();
             }
         }
     }
