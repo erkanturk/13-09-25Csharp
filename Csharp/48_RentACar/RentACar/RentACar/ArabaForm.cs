@@ -189,5 +189,12 @@ namespace RentACar
             kiralama.Show();
             this.Hide();
         }
+
+        private void btn_AracEkle_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1(_musteri);
+            form1.Show();
+            this.Hide();
+        }
     }
 }

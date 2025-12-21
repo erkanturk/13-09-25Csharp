@@ -48,6 +48,7 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
+            btn_AracEkle = new Button();
             ((System.ComponentModel.ISupportInitialize)dtg_arabalar).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -247,6 +248,16 @@
             label2.TabIndex = 0;
             label2.Text = "Araç";
             // 
+            // btn_AracEkle
+            // 
+            btn_AracEkle.Location = new Point(262, 121);
+            btn_AracEkle.Name = "btn_AracEkle";
+            btn_AracEkle.Size = new Size(75, 23);
+            btn_AracEkle.TabIndex = 5;
+            btn_AracEkle.Text = "Araba Ekle";
+            btn_AracEkle.UseVisualStyleBackColor = true;
+            btn_AracEkle.Click += btn_AracEkle_Click;
+            // 
             // ArabaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -254,6 +265,7 @@
             BackgroundImage = Properties.Resources.bertan_rent_acar;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1194, 681);
+            Controls.Add(btn_AracEkle);
             Controls.Add(groupBox1);
             Controls.Add(dtg_arabalar);
             Controls.Add(btn_kiralamalar);
@@ -292,5 +304,6 @@
         private Label label4;
         private Label label3;
         private Label label2;
+        private Button btn_AracEkle;
     }
 }

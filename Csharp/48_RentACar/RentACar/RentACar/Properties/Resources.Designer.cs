@@ -79,5 +79,15 @@ namespace RentACar.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rent_a_car_kasko_özserneo {
+            get {
+                object obj = ResourceManager.GetObject("rent-a-car-kasko-özserneo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

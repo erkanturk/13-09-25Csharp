@@ -44,6 +44,7 @@
             dtg_kiralamalar.Name = "dtg_kiralamalar";
             dtg_kiralamalar.Size = new Size(784, 422);
             dtg_kiralamalar.TabIndex = 0;
+            dtg_kiralamalar.SelectionChanged += dtg_kiralamalar_SelectionChanged;
             // 
             // label1
             // 
@@ -63,6 +64,7 @@
             btn_yeniKiralama.TabIndex = 2;
             btn_yeniKiralama.Text = "Yeni Kirala";
             btn_yeniKiralama.UseVisualStyleBackColor = true;
+            btn_yeniKiralama.Click += btn_yeniKiralama_Click;
             // 
             // btn_kiralamaDuzenle
             // 
@@ -72,6 +74,7 @@
             btn_kiralamaDuzenle.TabIndex = 2;
             btn_kiralamaDuzenle.Text = "Düzenle";
             btn_kiralamaDuzenle.UseVisualStyleBackColor = true;
+            btn_kiralamaDuzenle.Click += btn_kiralamaDuzenle_Click;
             // 
             // btn_kiralamaSil
             // 
@@ -81,6 +84,7 @@
             btn_kiralamaSil.TabIndex = 2;
             btn_kiralamaSil.Text = "Sil";
             btn_kiralamaSil.UseVisualStyleBackColor = true;
+            btn_kiralamaSil.Click += btn_kiralamaSil_Click;
             // 
             // button4
             // 
@@ -90,6 +94,7 @@
             button4.TabIndex = 2;
             button4.Text = "Kapat";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // KiralamaForm
             // 
