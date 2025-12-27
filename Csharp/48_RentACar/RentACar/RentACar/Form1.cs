@@ -6,8 +6,7 @@ namespace RentACar
 {
     public partial class Form1 : Form
     {
-        private readonly Marka _marka;
-        private readonly Araba _araba;
+       
         private readonly DataContext _context;
         private readonly Musteri _musteri;
         public Form1(Musteri musteri)
@@ -50,10 +49,7 @@ namespace RentACar
             }
         }
 
-        private void btn_kArac_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -61,26 +57,68 @@ namespace RentACar
             cmb_markalar.DisplayMember="Ad";
             cmb_markalar.ValueMember="Id";
             cmb_markalar.SelectedIndex=-1;
-            YukleAktifAraclar();
+            //YukleAktifAraclar();
 
         }
-        private void YukleAktifAraclar()
+
+        private void btn_aracEkle_Click(object sender, EventArgs e)
         {
-            var arabalist = _context.Arabalar.Where(a => a.Aktif)
-                .Include(i => i.Marka)
-                .Select(a => new
+            Araba araba = new Araba();
+            try
+            {
+
+                araba.MarkaId=Convert.ToInt32(cmb_markalar.SelectedValue);
+                araba.SaatlikUcret=Convert.ToDouble(txt_kUcret.Text);
+                araba.Yil=Convert.ToInt32(mtxt_yil.Text);
+                araba.Model=txt_kModel.Text;
+                araba.Plaka=txt_kPlaka.Text;
+                if (Aktif.Checked!=true)
                 {
-                    Model = a.Model,
-                    Plaka = a.Plaka,
-                    Yil = a.Yil,
-                    SaatlikUcret = a.SaatlikUcret,
-                    Aktif = a.Aktif,
-                    Marka = a.Marka
+                    araba.Aktif=false;
+
                 }
-                ).ToList();
-            
+                else if (Aktif.Checked==true&&Pasif.Checked==true)
+                {
+                    MessageBox.Show("Sadece bir seçenek seçiniz");
+                    Aktif.Checked=false;
+                    Pasif.Checked=false;
+                    return;
+                }
+                else if (Aktif.Checked==true)
+                {
+                    araba.Aktif=true;
+                }
+                else if (Pasif.Checked==true)
+                {
+                    araba.Aktif=false;
+                }
+                else if (Aktif.Checked!=true||Pasif.Checked!=true)
+                {
+                    MessageBox.Show("Lütfen aracýn durumunu belirtin");
+                    return;
+                }
+                _context.Arabalar.Add(araba);
+                _context.SaveChanges();
+                MessageBox.Show("Kayýt baþarý ile eklendi");
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
 
         }
+
+        private void btn_geriDon_Click(object sender, EventArgs e)
+        {
+            ArabaForm arabaForm = new ArabaForm(_musteri);
+            this.Hide();
+            arabaForm.Show();
+
+        }
+
+
 
     }
 }

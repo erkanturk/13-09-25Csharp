@@ -250,9 +250,9 @@
             // 
             // btn_AracEkle
             // 
-            btn_AracEkle.Location = new Point(262, 121);
+            btn_AracEkle.Location = new Point(238, 113);
             btn_AracEkle.Name = "btn_AracEkle";
-            btn_AracEkle.Size = new Size(75, 23);
+            btn_AracEkle.Size = new Size(110, 34);
             btn_AracEkle.TabIndex = 5;
             btn_AracEkle.Text = "Araba Ekle";
             btn_AracEkle.UseVisualStyleBackColor = true;

@@ -38,13 +38,14 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            maskedTextBox1 = new MaskedTextBox();
+            txt_kModel = new TextBox();
+            txt_kPlaka = new TextBox();
+            txt_kUcret = new TextBox();
+            mtxt_yil = new MaskedTextBox();
             Aktif = new CheckBox();
             Pasif = new CheckBox();
-            btn_kArac = new Button();
+            btn_geriDon = new Button();
+            btn_aracEkle = new Button();
             SuspendLayout();
             // 
             // label1
@@ -145,37 +146,39 @@
             label7.TabIndex = 9;
             label7.Text = "Aktif";
             // 
-            // textBox1
+            // txt_kModel
             // 
-            textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(463, 83);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(121, 29);
-            textBox1.TabIndex = 10;
+            txt_kModel.Font = new Font("Segoe UI", 12F);
+            txt_kModel.Location = new Point(463, 83);
+            txt_kModel.Name = "txt_kModel";
+            txt_kModel.Size = new Size(121, 29);
+            txt_kModel.TabIndex = 10;
             // 
-            // textBox2
+            // txt_kPlaka
             // 
-            textBox2.Font = new Font("Segoe UI", 12F);
-            textBox2.Location = new Point(463, 135);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(121, 29);
-            textBox2.TabIndex = 11;
+            txt_kPlaka.Font = new Font("Segoe UI", 12F);
+            txt_kPlaka.Location = new Point(463, 135);
+            txt_kPlaka.Name = "txt_kPlaka";
+            txt_kPlaka.Size = new Size(121, 29);
+            txt_kPlaka.TabIndex = 11;
             // 
-            // textBox3
+            // txt_kUcret
             // 
-            textBox3.Font = new Font("Segoe UI", 12F);
-            textBox3.Location = new Point(463, 180);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(121, 29);
-            textBox3.TabIndex = 12;
+            txt_kUcret.Font = new Font("Segoe UI", 12F);
+            txt_kUcret.Location = new Point(463, 180);
+            txt_kUcret.Name = "txt_kUcret";
+            txt_kUcret.Size = new Size(121, 29);
+            txt_kUcret.TabIndex = 12;
             // 
-            // maskedTextBox1
+            // mtxt_yil
             // 
-            maskedTextBox1.Font = new Font("Segoe UI", 12F);
-            maskedTextBox1.Location = new Point(463, 227);
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(121, 29);
-            maskedTextBox1.TabIndex = 13;
+            mtxt_yil.Font = new Font("Segoe UI", 12F);
+            mtxt_yil.Location = new Point(463, 227);
+            mtxt_yil.Mask = "0000";
+            mtxt_yil.Name = "mtxt_yil";
+            mtxt_yil.Size = new Size(121, 29);
+            mtxt_yil.TabIndex = 13;
+            mtxt_yil.ValidatingType = typeof(int);
             // 
             // Aktif
             // 
@@ -199,15 +202,25 @@
             Pasif.Text = "Pasif";
             Pasif.UseVisualStyleBackColor = true;
             // 
-            // btn_kArac
+            // btn_geriDon
             // 
-            btn_kArac.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            btn_kArac.Location = new Point(468, 358);
-            btn_kArac.Name = "btn_kArac";
-            btn_kArac.Size = new Size(122, 31);
-            btn_kArac.TabIndex = 16;
-            btn_kArac.Text = "Araç Ekle";
-            btn_kArac.UseVisualStyleBackColor = true;
+            btn_geriDon.Location = new Point(34, 360);
+            btn_geriDon.Name = "btn_geriDon";
+            btn_geriDon.Size = new Size(92, 31);
+            btn_geriDon.TabIndex = 17;
+            btn_geriDon.Text = "Geri";
+            btn_geriDon.UseVisualStyleBackColor = true;
+            btn_geriDon.Click += btn_geriDon_Click;
+            // 
+            // btn_aracEkle
+            // 
+            btn_aracEkle.Location = new Point(463, 360);
+            btn_aracEkle.Name = "btn_aracEkle";
+            btn_aracEkle.Size = new Size(109, 36);
+            btn_aracEkle.TabIndex = 18;
+            btn_aracEkle.Text = "Araç Ekle";
+            btn_aracEkle.UseVisualStyleBackColor = true;
+            btn_aracEkle.Click += btn_aracEkle_Click;
             // 
             // Form1
             // 
@@ -216,13 +229,14 @@
             BackgroundImage = Properties.Resources.rent_a_car_kasko_özserneo;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(637, 446);
-            Controls.Add(btn_kArac);
+            Controls.Add(btn_aracEkle);
+            Controls.Add(btn_geriDon);
             Controls.Add(Pasif);
             Controls.Add(Aktif);
-            Controls.Add(maskedTextBox1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(mtxt_yil);
+            Controls.Add(txt_kUcret);
+            Controls.Add(txt_kPlaka);
+            Controls.Add(txt_kModel);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -252,12 +266,13 @@
         private Label label5;
         private Label label6;
         private Label label7;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private MaskedTextBox maskedTextBox1;
+        private TextBox txt_kModel;
+        private TextBox txt_kPlaka;
+        private TextBox txt_kUcret;
+        private MaskedTextBox mtxt_yil;
         private CheckBox Aktif;
         private CheckBox Pasif;
-        private Button btn_kArac;
+        private Button btn_geriDon;
+        private Button btn_aracEkle;
     }
 }

@@ -26,7 +26,14 @@ namespace RentACar
             _context = new DataContext();
             dtp_kTarih.MinDate= DateTime.Now;
             dtp_tTarih.MinDate= DateTime.Now.AddDays(1);
-
+            if (_musteri.Id==1)
+            {
+                btn_AracEkle.Visible = true;
+            }
+            else
+            {
+                btn_AracEkle.Visible=false;
+            }
 
         }
 
@@ -192,9 +199,13 @@ namespace RentACar
 
         private void btn_AracEkle_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1(_musteri);
-            form1.Show();
-            this.Hide();
+           
+                Form1 form1 = new Form1(_musteri);
+                form1.Show();
+                this.Hide();
+
+            
+          
         }
     }
 }
